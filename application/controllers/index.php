@@ -18,6 +18,7 @@ class IndexController extends Controller
 
     public function indexAction()
     {
+        (new UserModel())->test();
         $data = time();
         $this->getView()->assign("content", "Hello World");
         $this->display('index');
@@ -28,36 +29,6 @@ class IndexController extends Controller
         phpinfo();
     }
 
-    public function testAction()
-    {
-        $info['test'] = 0;
-        if (!empty($info['test'])) {
-            \Response\Response::Json($info);
-        }
-        print_r($info);
-    }
-
-    public function cacheAction()
-    {
-        $redis = new Redis();
-        $redis->connect('127.0.0.1');
-        echo $redis->set('page', '123123123');
-    }
-
-    public function getCacheAction()
-    {
-        $redis = new Redis();
-        $redis->connect('127.0.0.1');
-        $page = $redis->get('page');
-        print_r($page);
-    }
-
-    public function getdbAction()
-    {
-        $test = Test::Instance();
-        $setting = $test->setting();
-        \Response\Response::Json($setting);
-    }
 
 
 }

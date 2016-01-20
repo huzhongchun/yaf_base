@@ -28,7 +28,7 @@ class App
         //缓存类型
         "type" => "file",
         //缓存路径
-        "temp" => "/home/logs/file_cache/",
+        "temp" => "/home/thefair/cache/yaf_base/file",
         //缓存前缀
         "prefix" => "",
         //默认过期时间

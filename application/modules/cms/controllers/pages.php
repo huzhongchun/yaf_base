@@ -22,8 +22,10 @@ class PagesController extends Controller_Abstract {
      * 显示页面信息
      */
     public function showAction() {
+        $id = $this->getRequest()->getParam('name');
         echo "<pre>";
         print_r($_SERVER);
+        echo $id;
     }
 
 
